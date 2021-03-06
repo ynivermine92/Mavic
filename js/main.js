@@ -1,4 +1,4 @@
-
+//slider///
 const swiper = new Swiper('.products__slider-wrapper', {
   // Optional parameters
   loop: false,
@@ -19,18 +19,30 @@ const swiper = new Swiper('.products__slider-wrapper', {
     el: '.swiper-scrollbar',
   },
 });
+//slider///
 
-let blockTabs = document.querySelectorAll('.advantage__text');
-  console.log(blockTabs);
+///acardion////
+const input = document.querySelectorAll('.acardion-item__triger');
 
- let tabs = () =>{
-  for(let i = 0; i < blockTabs.length;i++){
-      blockTabs[i].classList.toggle('active');
-    }
- 
-  }
+input.forEach((item) => {
+  item.addEventListener('click', () => {
+   item.classList.toggle('active');
+  })
+})
+///acardion////
 
-  
-let btn = document.querySelectorAll('.advantage__btn').forEach((item) =>  
-    item.addEventListener('click', tabs,)
-);
+/* scroll */
+new fullpage('#fullpage', {
+	//options here
+	autoScrolling:true,
+	scrollHorizontally: true,
+  sectionSelector: '.section',
+  menu: '#header__nav',
+  anchors:['top', 'products', 'leadership','characteristics','advantage'],
+});
+
+
+//methods
+fullpage_api.setAllowScrolling(true);
+
+
